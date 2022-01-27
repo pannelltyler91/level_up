@@ -2,8 +2,8 @@ import React from 'react';
 
 function Dashmessage(){
     return(
-        <div>
-            <h1>Dashmessage</h1>
+        <div style={{border:'solid black 2px',margin:'5px',height:'15vh'}}>
+            <h5>Dashmessage</h5>
         </div>
     )
 }

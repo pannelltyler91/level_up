@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 
 function Taskbar(){
     return(
-        <div style={{border:'solid black 2px', width:'200px'}}>
+        <div style={{border:'solid black 2px', width:'200px',height:'100vh'}}>
             
             <Col >
             <Container>

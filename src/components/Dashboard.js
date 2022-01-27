@@ -4,8 +4,8 @@ import Dashmessage from './Dashmessage'
 
 function Dashboard(){
     return(
-        <div>
-            <h1>Dashboard</h1>
+        <div style={{border:'solid black 2px', paddingBottom:'20%',height:'100vh',marginLeft:'5px'}}>
+            <h3><u>Dashboard</u></h3>
             <Dashmessage/>
             <TaskView/>
         </div>
