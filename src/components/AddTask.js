@@ -4,9 +4,9 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 
-function Login(props) {
-  return (
-    <Container>
+function AddTask(props) {
+    return(
+        <Container>
       <Modal
         {...props}
         size="lg"
@@ -15,22 +15,26 @@ function Login(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Login
+            Add Task
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Label>Task Title</Form.Label>
+              <Form.Control type="text" placeholder="Task Name" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Label>Task Description</Form.Label>
+              <Form.Control type="text" placeholder="Task Description" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Local Priority</Form.Label>
+              <Form.Control type="number" placeholder="Your Divisions Priority for this task" />
             </Form.Group>
             <Button variant="primary" type="submit">
-              Login
+              Add Task
             </Button>
           </Form>
         </Modal.Body>
@@ -39,7 +43,7 @@ function Login(props) {
       </Modal.Footer>
     </Modal>
     </Container>
-  );
+    )
 }
 
-export default Login;
+export default AddTask;
