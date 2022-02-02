@@ -24,9 +24,9 @@ function Taskbar() {
               <Card key={task.name} style={{ margin: "5px" }} onClick={(e) =>{console.log(e.target)}} >
                 <Card.Header>
                   <Card.Title>{task.name}</Card.Title>
+                  <Button variant="success">1</Button>
                   <Button variant="warning">{task.priority}</Button>
                   <Button variant="danger">2</Button>
-                  <Button variant="success">1</Button>
                 </Card.Header>
                 <Card.Body>
                   <Card.Text>{task.description}</Card.Text>
