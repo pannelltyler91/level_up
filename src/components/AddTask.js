@@ -4,17 +4,21 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import {useDispatch} from 'react-redux'
+import {addTask} from '../features/tasks'
+import {useSelector} from 'react-redux'
 
 function AddTask(props) {
+    const error = useSelector((state) => state.tasks.error)
     const dispatch = useDispatch();
     const _addTask = (e) =>{
         e.preventDefault();
         const data = {name:e.target.title.value,description:e.target.description.value,priority:e.target.subPriority.value}
-        console.log(data)
-        dispatch()
+        dispatch(addTask(data));
+      
     }
     return(
         <Container>
+          
       <Modal
         {...props}
         size="lg"
@@ -47,8 +51,10 @@ function AddTask(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
+          {error}
         <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
+    
     </Modal>
     </Container>
     )

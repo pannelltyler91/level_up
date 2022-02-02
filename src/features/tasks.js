@@ -2,12 +2,15 @@ import {createSlice} from '@reduxjs/toolkit'
 
 export const taskSlice = createSlice({
     name:'tasks',
-    initialState:{value:[]},
+    initialState:{value:[],error:''},
     reducers:{
         addTask:(state,action) => {
-            let existingItem = state.value.find((task) => task.title === action.payload.title)
+            let existingItem = state.value.find((task) => task.name === action.payload.name)
 
-            existingItem? console.log('already exists'): console.log('new task')
+            existingItem? state.error = 'Task already exists!': 
+            (state.value = [...state.value,action.payload])
+            state.error = ""
+            console.log(state.value)
 
         },
 
