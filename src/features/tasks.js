@@ -5,7 +5,10 @@ export const taskSlice = createSlice({
     initialState:{value:[]},
     reducers:{
         addTask:(state,action) => {
-            
+            let existingItem = state.value.find((task) => task.title === action.payload.title)
+
+            existingItem? console.log('already exists'): console.log('new task')
+
         },
 
     }
